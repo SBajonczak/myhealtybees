@@ -1,0 +1,9 @@
+{
+  "name": "Meine digitalen Stockkarten",
+  "short_name": "Stockkarten",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#fef8e5",
+  "theme_color": "#3c6e71",
+  "icons": []
+}
