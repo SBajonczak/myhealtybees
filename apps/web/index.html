@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meine digitalen Stockkarten</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Meine digitalen Stockkarten</h1>
+      <p>Behalte Königinnen, Fütterungen und Behandlungen bequem im Blick.</p>
+      <button id="logoutButton" class="ghost" hidden>Abmelden</button>
+    </header>
+
+    <main id="app" class="app">
+      <section id="authSection" class="card">
+        <h2>Anmeldung</h2>
+        <p>
+          Melde dich mit deinem bevorzugten Anbieter an. Wir speichern lediglich
+          die notwendigen Profildaten, damit du deine Bienenvölker überall
+          wiederfindest.
+        </p>
+        <form id="loginForm" class="form">
+          <label for="provider">Anbieter</label>
+          <select id="provider" name="provider" required>
+            <option value="google">Google</option>
+            <option value="facebook">Facebook</option>
+            <option value="microsoft">Microsoft</option>
+          </select>
+
+          <label for="externalId">Anmelde-ID</label>
+          <input
+            id="externalId"
+            name="externalId"
+            type="text"
+            required
+            placeholder="Von deinem Anbieter bereitgestellte ID"
+          />
+
+          <label for="displayName">Name</label>
+          <input id="displayName" name="displayName" type="text" placeholder="Optional" />
+
+          <label for="email">E-Mail</label>
+          <input id="email" name="email" type="email" placeholder="Optional" />
+
+          <button type="submit" class="primary">Anmelden</button>
+        </form>
+      </section>
+
+      <section id="dashboard" class="dashboard" hidden>
+        <section class="card">
+          <h2>Neues Volk anlegen</h2>
+          <form id="hiveForm" class="form">
+            <label for="race">Rasse</label>
+            <input id="race" name="race" type="text" required />
+
+            <label for="queenDate">Datum der Königin</label>
+            <input id="queenDate" name="queenDate" type="date" required max="" />
+
+            <label for="location">Standort</label>
+            <input id="location" name="location" type="text" required />
+
+            <label for="hiveFormat">Beutenmaß</label>
+            <input id="hiveFormat" name="hiveFormat" type="text" required />
+
+            <button type="submit" class="primary">Volk speichern</button>
+          </form>
+        </section>
+
+        <section class="card">
+          <header class="card-header">
+            <h2>Meine Völker</h2>
+            <button id="refreshButton" class="ghost">Aktualisieren</button>
+          </header>
+          <div id="hiveList" class="hive-list"></div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>Offline nutzbar &mdash; Synchronisation startet automatisch sobald du wieder online bist.</p>
+      <span id="syncStatus" class="sync-status" aria-live="polite"></span>
+    </footer>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

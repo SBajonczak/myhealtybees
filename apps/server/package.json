@@ -1,0 +1,12 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "API server for the digital bee colony manager",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test ./tests/*.test.js",
+    "lint": "node ../../scripts/lint.js apps/server",
+    "build": "node ../../scripts/build.js apps/server"
+  }
+}

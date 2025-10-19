@@ -1,0 +1,15 @@
+{
+  "name": "myhealtybees",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Digital bee colony management platform",
+  "workspaces": [
+    "apps/server",
+    "apps/web"
+  ],
+  "scripts": {
+    "lint": "node scripts/lint.js",
+    "test": "npm run test -w apps/server && npm run test -w apps/web",
+    "build": "node scripts/build.js"
+  }
+}

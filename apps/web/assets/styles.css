@@ -1,0 +1,251 @@
+:root {
+  --bg: #f6f7fb;
+  --surface: #ffffff;
+  --primary: #3c6e71;
+  --primary-dark: #2a4d50;
+  --accent: #ffb703;
+  --danger: #d62828;
+  --text: #102a43;
+  --muted: #829ab1;
+  --radius: 16px;
+  --shadow: 0 12px 32px rgba(16, 42, 67, 0.08);
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, -apple-system, sans-serif;
+  background: linear-gradient(180deg, #fef8e5 0%, var(--bg) 60%);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  padding: 2.5rem 1.5rem 1.5rem;
+  text-align: center;
+  background: radial-gradient(circle at top, #ffe066, #ffb703);
+  color: #1b1b1b;
+}
+
+.app-header h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.9rem;
+}
+
+.app-header p {
+  margin: 0 auto 1.25rem;
+  max-width: 28rem;
+  line-height: 1.5;
+}
+
+.app-header .ghost {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: transparent;
+  border-radius: 999px;
+  padding: 0.35rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.app {
+  flex: 1;
+  padding: 0 1.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.form label {
+  font-weight: 600;
+}
+
+.form input,
+.form select,
+.form textarea {
+  width: 100%;
+  border: 1px solid rgba(16, 42, 67, 0.12);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+button.primary {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button.primary:hover,
+button.primary:focus {
+  background: var(--primary-dark);
+}
+
+button.ghost {
+  border: 1px solid var(--primary);
+  background: transparent;
+  border-radius: 12px;
+  padding: 0.5rem 0.9rem;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+.hive-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.hive-item {
+  border: 1px solid rgba(16, 42, 67, 0.08);
+  border-radius: 14px;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.92);
+  display: grid;
+  gap: 1rem;
+}
+
+.hive-meta {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.hive-meta span {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.activity-section {
+  border-top: 1px dashed rgba(16, 42, 67, 0.12);
+  padding-top: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+details {
+  background: rgba(16, 42, 67, 0.04);
+  border-radius: 12px;
+  padding: 0.5rem 0.75rem;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  outline: none;
+}
+
+.activity-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.activity {
+  background: rgba(60, 110, 113, 0.08);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+}
+
+.activity h4 {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  background: rgba(255, 183, 3, 0.18);
+  color: var(--primary-dark);
+  font-weight: 600;
+}
+
+.inline-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.alert {
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  background: rgba(214, 40, 40, 0.08);
+  color: var(--danger);
+  font-weight: 600;
+}
+
+.sync-status {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.sync-status[data-tone='error'] {
+  color: var(--danger);
+}
+
+.sync-status[data-tone='success'] {
+  color: var(--primary);
+}
+
+.app-footer {
+  padding: 1.25rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+@media (min-width: 720px) {
+  body {
+    align-items: center;
+  }
+
+  .app {
+    max-width: 960px;
+    width: 100%;
+  }
+}
